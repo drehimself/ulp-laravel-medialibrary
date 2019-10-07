@@ -94,6 +94,17 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                <div>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="uploaded_file">
+                        <input type="submit">
+                    </form>
+                </div>
+                <div>
+                    {{ $listing->getMedia()->last() }}
+                </div>
             </div>
         </div>
     </body>
